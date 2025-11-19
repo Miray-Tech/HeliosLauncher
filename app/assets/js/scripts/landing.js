@@ -6,18 +6,17 @@ const { URL }                 = require('url')
 const {
     MojangRestAPI,
     getServerStatus
-}                             = require('helios-core/mojang')
+}                             = require('helios-core-miray-tech/mojang')
 const {
     RestResponseStatus,
-    isDisplayableError,
     validateLocalFile
-}                             = require('helios-core/common')
+}                             = require('helios-core-miray-tech/common')
 const {
     FullRepair,
     DistributionIndexProcessor,
     MojangIndexProcessor,
     downloadFile
-}                             = require('helios-core/dl')
+}                             = require('helios-core-miray-tech/dl')
 const {
     validateSelectedJvm,
     ensureJavaDirIsRoot,
@@ -25,7 +24,7 @@ const {
     discoverBestJvmInstallation,
     latestOpenJDK,
     extractJdk
-}                             = require('helios-core/java')
+}                             = require('helios-core-miray-tech/java')
 
 // Internal Requirements
 const DiscordWrapper          = require('./assets/js/discordwrapper')
@@ -149,7 +148,7 @@ function updateSelectedAccount(authUser){
             username = authUser.displayName
         }
         if(authUser.uuid != null){
-            document.getElementById('avatarContainer').style.backgroundImage = `url('https://mc-heads.net/body/${authUser.uuid}/right')`
+            document.getElementById('avatarContainer').style.backgroundImage = `url('https://skins.miray-tech.ru/body/full/${authUser.uuid}')`
         }
     }
     user_text.innerHTML = username

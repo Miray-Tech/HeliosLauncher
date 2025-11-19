@@ -15,7 +15,7 @@
 
 * 🔒 Full account management.
   * Add multiple accounts and easily switch between them.
-  * Microsoft (OAuth 2.0) + Mojang (Yggdrasil) authentication fully supported.
+  * Mojang (Yggdrasil) authentication fully supported.
   * Credentials are never stored and transmitted directly to Mojang.
 * 📂 Efficient asset management.
   * Receive client updates as soon as we release them.
@@ -174,14 +174,6 @@ This allows you to debug Electron's [main process][mainprocess]. You can debug s
 This allows you to debug Electron's [renderer process][rendererprocess]. This requires you to install the [Debugger for Chrome][chromedebugger] extension.
 
 Note that you **cannot** open the DevTools window while using this debug configuration. Chromium only allows one debugger, opening another will crash the program.
-
----
-
-### Note on Third-Party Usage
-
-Please give credit to the original author and provide a link to the original source. This is free software, please do at least this much.
-
-For instructions on setting up Microsoft Authentication, see https://github.com/dscalzi/HeliosLauncher/blob/master/docs/MicrosoftAuth.md.
 
 ---
 

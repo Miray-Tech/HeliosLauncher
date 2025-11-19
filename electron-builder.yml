@@ -1,14 +1,14 @@
-appId: 'helioslauncher'
-productName: 'Helios Launcher'
+appId: 'miray-tech-launcher'
+productName: 'Miray Tech Launcher'
 artifactName: '${productName}-setup-${version}.${ext}'
 
-copyright: 'Copyright © 2018-2024 Daniel Scalzi'
+copyright: 'Copyright © Miray Tech'
 
 asar: true
 compression: 'maximum'
 
 files:
-  - '!{dist,.gitignore,.vscode,docs,dev-app-update.yml,.nvmrc,.eslintrc.json}'
+  - '!{dist,.gitignore,.vscode,docs,.nvmrc,.eslintrc.json}'
 
 extraResources:
   - 'libraries'
@@ -39,8 +39,8 @@ mac:
 # Linux Configuration
 linux: 
   target: 'AppImage'
-  maintainer: 'Daniel Scalzi'
-  vendor: 'Daniel Scalzi'
+  maintainer: 'Miray Tech'
+  vendor: 'Miray Tech'
   synopsis: 'Modded Minecraft Launcher'
   description: 'Custom launcher which allows users to join modded servers. All mods, configurations, and updates are handled automatically.'
   category: 'Game'

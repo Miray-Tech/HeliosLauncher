@@ -2,8 +2,8 @@ const AdmZip                = require('adm-zip')
 const child_process         = require('child_process')
 const crypto                = require('crypto')
 const fs                    = require('fs-extra')
-const { LoggerUtil }        = require('helios-core')
-const { getMojangOS, isLibraryCompatible, mcVersionAtLeast }  = require('helios-core/common')
+const { LoggerUtil }        = require('helios-core-miray-tech')
+const { getMojangOS, isLibraryCompatible, mcVersionAtLeast }  = require('helios-core-miray-tech/common')
 const { Type }              = require('helios-distribution-types')
 const os                    = require('os')
 const path                  = require('path')
@@ -378,6 +378,10 @@ class ProcessBuilder {
         args.push('-Xmx' + ConfigManager.getMaxRAM(this.server.rawServer.id))
         args.push('-Xms' + ConfigManager.getMinRAM(this.server.rawServer.id))
         args = args.concat(ConfigManager.getJVMOptions(this.server.rawServer.id))
+
+        args.push('-javaagent:' + ConfigManager.AuthLibInjectorPath + '=' + ConfigManager.AuthLibInjectorUrl)
+        args.push('-Dauthlibinjector.side=client')
+
         args.push('-Djava.library.path=' + tempNativePath)
 
         // Main Java Class
@@ -429,6 +433,9 @@ class ProcessBuilder {
         args.push('-Xmx' + ConfigManager.getMaxRAM(this.server.rawServer.id))
         args.push('-Xms' + ConfigManager.getMinRAM(this.server.rawServer.id))
         args = args.concat(ConfigManager.getJVMOptions(this.server.rawServer.id))
+
+        args.push('-javaagent:' + ConfigManager.AuthLibInjectorPath + '=' + ConfigManager.AuthLibInjectorUrl)
+        args.push('-Dauthlibinjector.side=client')
 
         // Main Java Class
         args.push(this.modManifest.mainClass)
@@ -510,7 +517,7 @@ class ProcessBuilder {
                             val = this.authUser.accessToken
                             break
                         case 'user_type':
-                            val = this.authUser.type === 'microsoft' ? 'msa' : 'mojang'
+                            val = 'mojang'
                             break
                         case 'version_type':
                             val = this.vanillaManifest.type
@@ -594,7 +601,7 @@ class ProcessBuilder {
                         val = this.authUser.accessToken
                         break
                     case 'user_type':
-                        val = this.authUser.type === 'microsoft' ? 'msa' : 'mojang'
+                        val = 'mojang'
                         break
                     case 'user_properties': // 1.8.9 and below.
                         val = '{}'

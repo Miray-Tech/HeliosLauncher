@@ -1,5 +1,5 @@
 // Work in progress
-const { LoggerUtil } = require('helios-core')
+const { LoggerUtil } = require('helios-core-miray-tech')
 
 const logger = LoggerUtil.getLogger('DiscordWrapper')
 
