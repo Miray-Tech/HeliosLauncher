@@ -39,7 +39,7 @@ function showError(element, value){
  * @param {HTMLElement} element The element to shake.
  */
 function shakeError(element){
-    if(element.style.opacity == 1){
+    if(element.style.opacity === 1){
         element.classList.remove('shake')
         void element.offsetWidth
         element.classList.add('shake')
@@ -215,11 +215,9 @@ loginButton.addEventListener('click', () => {
 
         let actualDisplayableError
         if(isDisplayableError(displayableError)) {
-            msftLoginLogger.error('Error while logging in.', displayableError)
             actualDisplayableError = displayableError
         } else {
             // Uh oh.
-            msftLoginLogger.error('Unhandled error during login.', displayableError)
             actualDisplayableError = Lang.queryJS('login.error.unknown')
         }
 

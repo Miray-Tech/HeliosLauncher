@@ -518,6 +518,7 @@ body, button {
     fill: #fff;
     height: 20px;
     width: 20px;
+    margin-bottom: 3px;
 }
 
 /* Span which displays errors related to login field content. */
